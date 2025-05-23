@@ -1,0 +1,5 @@
+{
+  "name": "Gemini Chat Clone",
+  "description": "A ChatGPT-like application powered by the Gemini API, allowing users to engage in text-based conversations with an AI assistant. Features include real-time streaming of AI responses and a clean, modern chat interface.",
+  "requestFramePermissions": []
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wasoi AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'ai-bg': '#343541', // Primary background
+              'user-message-bg': '#2E3A47', // Slightly different for user messages
+              'ai-message-bg': '#444654',   // AI message background
+              'input-bg': '#40414F',       // Input area, header/footer background
+              'text-primary': '#FFFFFF',   // Main text color (white)
+              'text-secondary': '#B0B0B0', // Lighter gray for secondary text/icons
+              'border-color': '#565869',   // Subtle borders
+              'accent': '#10A37F',        // Accent color (e.g., ChatGPT green/teal)
+              'error-bg': '#5f2120',      // Darker red for error background
+              'error-text': '#F87171',    // Light red for error text
+            },
+            animation: {
+              'fadeIn': 'fadeIn 0.3s ease-in-out forwards',
+              'slideInUp': 'slideInUp 0.4s ease-out forwards',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: 0 },
+                '100%': { opacity: 1 },
+              },
+              slideInUp: {
+                '0%': { opacity: 0, transform: 'translateY(15px)' },
+                '100%': { opacity: 1, transform: 'translateY(0)' },
+              }
+            },
+            boxShadow: { // Standard shadows, removed glows
+              'md': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+              'lg': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+              'inner': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #343541; /* ai-bg */
+        color: #FFFFFF; /* text-primary */
+      }
+      /* Custom scrollbar styles - subdued */
+      .scrollbar-thin::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      .scrollbar-thin::-webkit-scrollbar-track {
+        background: #40414F; /* input-bg */
+        border-radius: 10px;
+      }
+      .scrollbar-thin::-webkit-scrollbar-thumb {
+        background: #565869; /* border-color */
+        border-radius: 10px;
+      }
+      .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+        background: #6b7280; /* slightly lighter gray */
+      }
+      /* Ensure textarea placeholder is visible */
+      textarea::placeholder {
+        color: #B0B0B0; /* text-secondary */
+      }
+      /* For Firefox */
+      .scrollbar-thin {
+        scrollbar-width: thin;
+        scrollbar-color: #565869 #40414F;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.0.1"
+  }
+}
+</script>
+</head>
+  <body class="bg-ai-bg">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html><link rel="stylesheet" href="index.css">
+<script src="index.tsx" type="module"></script>
